@@ -31,7 +31,7 @@ To ensure a rigorous comparative analysis, a **parametric sweep methodology** wa
 * **Substrate Dimensions:** $1 \times 1 \times 0.6 \text{ mm}$
 * **Channel Diameter:** $200\ \mu\text{m}$ (Constant across models).
 
-**Velocity Data Points:** $0.01\text{ m/s}, \ 0.05\text{ m/s}, \ 0.1\text{ m/s}, \ 0.5\text{ m/s}$
+**Velocity Data Points:** $0.01\text{ m/s}, \ 0.05\text{ m/s}, \ 0.1\text{ m/s}$
 
 ---
 
@@ -95,7 +95,35 @@ At the baseline velocity of $0.01\text{ m/s}$, the system operates in a **diffus
 * **Flow Distribution:** In Model 2, the division of mass flow reduces the local Reynolds number within individual channels, shifting the cooling mechanism further towards pure conduction.
 * **Conclusion for imec:** While Model 1 is more "aggressive" in heat extraction, Model 2 offers better temperature uniformity. The serpentine design is preferred for hotspot cooling, whereas the parallel design is optimal for large-area power electronics where pressure drop is a constraint.
 
-## 6. Future Work & Scaling Potential
+
+
+## 6. Comparative Analysis ($v = 0.05\text{ m/s}$)
+
+| Parameter | Model 1 (Serpentine) | Model 2 (Parallel) | Unit |
+| :--- | :---: | :---: | :--- |
+| **Integrated Heat Flux ($\Phi$)** | $283$ | $283.73$ | $\text{mW}$ |
+| **Wetted Surface Area ($A$)** | $1.885 \times 10^{-6}$ | $1.885 \times 10^{-6}$ | $\text{m}^2$ |
+| **Avg. Wall Heat Flux ($q_w$)** | **$171.9$** | **$150.5$** | $\text{kW/m}^2$ |
+| **Heat Transfer Coeff. ($h$)** | **$3819.7$** | **$3344.0$** | $\text{W/(m}^2\cdot\text{K)}$ |
+| **Reynolds Number ($\text{Re}$)** | $10$ | $10$ (Inlet) | $[-]$ |
+| **Nusselt Number ($\text{Nu}$)** | $1.27$ | $1.11$ | $[-]$ |
+
+### Observations
+
+
+
+
+For both models, a near-linear scaling of thermal performance was observed; key parameters (Heat Flux, $h$, and $Nu$) increased approximately **4.8-fold** compared to the $v = 0.01 \text{ m/s}$ baseline, with Model 1 exhibiting even higher gains in specific metrics.
+
+This shift marks a critical transition in the thermal transport mechanism:
+
+* **Residence Time vs. Saturation:** At $v = 0.05\text{ m/s}$, the **fluid residence time** within the microchannels becomes significantly shorter than the **thermal saturation time**. 
+* **Gradient Preservation:** The coolant exits the channels before reaching thermal equilibrium with the diamond substrate. This maintains a higher **temperature gradient ($\Delta T$)** throughout the flow path, preventing fluid "overheating" and significantly enhancing the continuous heat extraction capacity from the diamond crystal.
+* **Efficiency Scaling:** The fact that the performance gain ($\approx 4.8\times$) nearly matches the velocity increase ($5\times$) proves that in this micro-scale regime, the system's efficiency is primarily limited by the flow rate rather than the diamond's internal thermal resistance.
+
+**Scientific Insight:** The $4.8\times$ jump in $Nu$ confirms that we are moving away from a "stagnant" thermal state toward an active transport state where the fluid flow actively scrubs heat from the microchannel walls.
+
+## 7. Future Work & Scaling Potential
 
 The current analysis at $v = 0.01\text{ m/s}$ provides a baseline for diffusion-dominated cooling. To fully map the performance of the diamond-microfluidic system, the following steps are planned:
 
