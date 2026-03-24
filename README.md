@@ -102,7 +102,7 @@ At the baseline velocity of $0.01\text{ m/s}$, the system operates in a **diffus
 | Parameter | Model 1 (Serpentine) | Model 2 (Parallel) | Unit |
 | :--- | :---: | :---: | :--- |
 | **Integrated Heat Flux ($\Phi$)** | $283$ | $283.73$ | $\text{mW}$ |
-| **Wetted Surface Area ($A$)** | $1.885 \times 10^{-6}$ | $1.885 \times 10^{-6}$ | $\text{m}^2$ |
+| **Wetted Surface Area ($A$)** | $1.652 \times 10^{-6}$ | $1.885 \times 10^{-6}$ | $\text{m}^2$ |
 | **Avg. Wall Heat Flux ($q_w$)** | **$171.9$** | **$150.5$** | $\text{kW/m}^2$ |
 | **Heat Transfer Coeff. ($h$)** | **$3819.7$** | **$3344.0$** | $\text{W/(m}^2\cdot\text{K)}$ |
 | **Reynolds Number ($\text{Re}$)** | $10$ | $10$ (Inlet) | $[-]$ |
@@ -123,7 +123,24 @@ This shift marks a critical transition in the thermal transport mechanism:
 
 **Scientific Insight:** The $4.8\times$ jump in $Nu$ confirms that we are moving away from a "stagnant" thermal state toward an active transport state where the fluid flow actively scrubs heat from the microchannel walls.
 
-## 7. Future Work & Scaling Potential
+
+
+
+## 7. Comparative Analysis ($v = 0.1\text{ m/s}$)
+
+| Parameter | Model 1 (Serpentine) | Model 2 (Parallel) | Unit |
+| :--- | :---: | :---: | :--- |
+| **Integrated Heat Flux ($\Phi$)** | $517.33$ | $--$ | $\text{mW}$ |
+| **Wetted Surface Area ($A$)** | $1.652 \times 10^{-6}$ | $1.885 \times 10^{-6}$ | $\text{m}^2$ |
+| **Avg. Wall Heat Flux ($q_w$)** | **$313.0$** | **$--$** | $\text{kW/m}^2$ |
+| **Heat Transfer Coeff. ($h$)** | **$6,955.9$** | **$--$** | $\text{W/(m}^2\cdot\text{K)}$ |
+| **Reynolds Number ($\text{Re}$)** | $20$ | $20$ (Inlet) | $[-]$ |
+| **Nusselt Number ($\text{Nu}$)** | $2.32$ | $--$ | $[-]$ |
+
+
+### Observation
+TODO
+## 8. Future Work & Scaling Potential
 
 The current analysis at $v = 0.01\text{ m/s}$ provides a baseline for diffusion-dominated cooling. To fully map the performance of the diamond-microfluidic system, the following steps are planned:
 
