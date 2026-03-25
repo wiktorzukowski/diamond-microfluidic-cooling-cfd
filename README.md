@@ -130,23 +130,41 @@ This shift marks a critical transition in the thermal transport mechanism:
 
 | Parameter | Model 1 (Serpentine) | Model 2 (Parallel) | Unit |
 | :--- | :---: | :---: | :--- |
-| **Integrated Heat Flux ($\Phi$)** | $517.33$ | $--$ | $\text{mW}$ |
+| **Integrated Heat Flux ($\Phi$)** | $517.33$ | $486.76$ | $\text{mW}$ |
 | **Wetted Surface Area ($A$)** | $1.652 \times 10^{-6}$ | $1.885 \times 10^{-6}$ | $\text{m}^2$ |
-| **Avg. Wall Heat Flux ($q_w$)** | **$313.0$** | **$--$** | $\text{kW/m}^2$ |
-| **Heat Transfer Coeff. ($h$)** | **$6,955.9$** | **$--$** | $\text{W/(m}^2\cdot\text{K)}$ |
+| **Avg. Wall Heat Flux ($q_w$)** | **$313.0$** | **$258.2$** | $\text{kW/m}^2$ |
+| **Heat Transfer Coeff. ($h$)** | **$6,955.9$** | **$5,737.3$** | $\text{W/(m}^2\cdot\text{K)}$ |
 | **Reynolds Number ($\text{Re}$)** | $20$ | $20$ (Inlet) | $[-]$ |
-| **Nusselt Number ($\text{Nu}$)** | $2.32$ | $--$ | $[-]$ |
+| **Nusselt Number ($\text{Nu}$)** | $2.32$ | $1.91$ | $[-]$ |
 
 
 ### Observation
-TODO
-## 8. Future Work & Scaling Potential
+At the highest tested velocity ($v = 0.1\text{ m/s}$), **Model 1 (Serpentine)** exhibits a Nusselt Number approximately **$21.5\%$ higher** than **Model 2 (Parallel)** ($2.32$ vs $1.91$). This performance gap is driven by the specific fluid dynamics of the serpentine geometry:
 
-The current analysis at $v = 0.01\text{ m/s}$ provides a baseline for diffusion-dominated cooling. To fully map the performance of the diamond-microfluidic system, the following steps are planned:
+* **Boundary Layer Disruption:** In the straight channels of Model 2, a stable **thermal boundary layer** develops, acting as an insulating shroud of warm fluid. In contrast, the curves in Model 1 act as "passive mixers."
+* **Secondary Flow Effects:** As the fluid enters the bends, centrifugal forces trigger secondary flows (often referred to as **Dean vortices**). These vortices force the overheated fluid near the wall to mix with the cooler fluid in the channel core.
+* **Continuous Re-initialization:** Each bend essentially "re-starts" the heat transfer process, preventing the fluid from reaching local thermal saturation. 
+
+**Conclusion:** Despite having $14\%$ less surface area, Model 1 achieves higher overall heat extraction and superior cooling density, proving that geometric intensification is more effective than raw surface area in high-velocity microfluidic cooling.
+
+## 8. Final conclusion
+
+The numerical simulations demonstrate that **geometric complexity (bends)** is necessary to fully unlock the thermal potential of a diamond-based microfluidic chip. While diamond's ultra-high thermal conductivity efficiently spreads heat, the fluid dynamics within the channels remain the primary bottleneck in the cooling chain.
+
+### Key Summary:
+* **The Geometry Factor:** Straight parallel channels (Model 2) suffer from thermal saturation at low velocities. In contrast, the serpentine architecture (Model 1) actively disrupts the boundary layer, achieving a **21.5% higher Nusselt number** at $0.1\text{ m/s}$.
+* **Convective Dominance:** Increasing the inlet velocity from $0.01\text{ m/s}$ to $0.1\text{ m/s}$ shifted the system from a diffusion-limited state to a convection-dominant regime, nearly decupling the heat extraction capacity.
+
+
+## 9. Future Work & Scaling Potential
+
+To further increase the thermal performance and take full advantage of the $200\text{ }\mu\text{m}$ diameter channels, the following developments are proposed:
 
 ###  Phase 2: High-Velocity Flow Characterization
-* **Convective Enhancement:** Analysis of the system at $v = 0.05, 0.1$, and $0.5\text{ m/s}$ to observe the transition to convection-dominated cooling.
+* **Convective Enhancement:** Analysis of the system at $v = 0.05, 0.1$, and $0.5\text{ m/s}$ to observe the transition to convection-dominated cooling. - Done
+
 * **Dean Vortex Analysis:** Detailed study of Model 1 at $0.5\text{ m/s}$ to quantify how secondary flows at the serpentine bends influence local Nusselt numbers.
+* From Conclusions prepared differend channel geometry and test it
 
 ###  Optimization & Material Integration
 * **Pumping Power vs. Cooling Ratio:** Calculating the "Economic Sweet Spot" – finding the velocity where heat removal is maximized without an exponential increase in pressure drop ($\Delta P$).
